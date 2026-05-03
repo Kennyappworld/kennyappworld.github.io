@@ -1,17 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Anchor Hotel Suite</title>
-  <script>
-    var l = window.location;
-    l.replace(
-      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      '/?p=/' + l.pathname.slice(1).replace(/&/g, '~and~') +
-      (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-      l.hash
-    );
-  </script>
+<script>
+  var l = window.location;
+  l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+    '/?/' + l.pathname.slice(1).split('/').join('/') + (l.search ? '&' + l.search.slice(1) : '') + l.hash);
+</script>
 </head>
-<body>Redirecting...</body>
 </html>
